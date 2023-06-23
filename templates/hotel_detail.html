@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+    <div id="cover-top" class="container-fluid">
+      <div class="container">
+        <nav>
+          <img src="{% static './images/logo.png' %}" alt="Company logo">
+
+          <button class="trigger-menu-button">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+
+          <ul class="menu">
+            <li><a href="#">Sing in</a></li>
+            <li><a class="link-button" href="#">sing up</a></li>
+          </ul>
+        </nav>
+        <div class="responsive-menu">
+          <ul class="menu">
+            <li>
+              <img src="{% static './images/logo.png' %}" alt="Company logo">
+              <button class="trigger-menu-button">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+              </button>
+            </li>
+            <li><a href="#">Sing in</a></li>
+            <li><a href="#">Sing up</a></li>
+          </ul>
+        </div>
+
+        <div class="content-center" style="padding: 0px 180px;">
+           
+          <h1>{{hotel.hotel_name}}</h1>
+          <h2>Price :{{hotel.hotel_price}}</h2>
+          <h1 style="margin: 2px;">Description:</h1>
+          <p>Description :{{hotel.description}}</p>
+          <p style="text-align: start;">Adresse :{{hotel.address}}</p>
+          <p style="text-align: start;">Localisation :{{hotel.localisation}}</p>
+          <p style="text-align: start;">Tags :{{hotel.amenities}}</p>
+          <p style="text-align: start;">Room :{{hotel.room_count}}</p>
+          <h1>you want reserve contact <a href="" style="color: black;text-decoration: none;">us on +228 96936369</a></h1>
+        </div>
+      </div>
+
+      <form class="destination-seach-form">
+        <div class="row-column">
+            <div class="image-frame">
+                <img src="{{hotel.hotel_image.url}}" width="550" alt="">
+              </div>
+          <div class="column" style="padding:0px 50px;">
+            {% for img in image %}
+            <div class="image-frame">
+                <img src="{{img.images.url}}" width="150" alt="">
+              </div>
+            {% endfor %}
+          </div>
+          </div>
+      </form>
+      
+    </div>
+
+    <section id="our-clients">
+      <div class="container">
+        <div class="content-center">
+          <h1>Perusahaan Yang Telah Mempercayakan <br class="break-line">
+              <span>Panggon</span> Dalam Melaksanakan Meeting</h1>
+        </div>
+        <ul class="clients-logos">
+          <li><img src="{% static './images/google-logo.png' %}" alt=""></li>
+          <li><img src="{% static './images/slack-logo.png' %}" alt=""></li>
+          <li><img src="{% static './images/invision-logo.png' %}" alt=""></li>
+          <li><img src="{% static './images/airbnb-logo.png' %}" alt=""></li>
+          <li><img src="{% static './images/stripe-logo.png' %}" alt=""></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="testimonials" class="container-fluid">
+      <div class="container">
+        <div class="content-center">
+          <h1>Apa Kata Mereka?</h1>
+        </div>
+        <div class="row testimonials-row">
+          <div class="col-md-6">
+            <div class="testimonial-box no-margin-top">
+                <div class="column">
+                  <div class="image-frame">
+                    <img src="{% static './images/client_1.jpg' %}" alt="">
+                  </div>
+                </div>
+                <div class="column client-testimonial">
+                  <p class="text">"Cras et ex quis nunc ornare tempus. Nulla gravida viverra nunc, in laoreet purus euismod at. Ut non feugiat purus, nec convallis dolor. Mauris euismod ac leo quis faucibus. Phasellus accumsan non lectus ut pellentesque. Nullam vitae interdum enim, id gravida tortor. Etiam nec neque fringilla, convallis tortor sed, tempor justo."</p>
+                  <p class="signature">Andre Henderson</p>
+                  <p class="position-and-company">Creative Director @ <span>IT Games</span></p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="testimonial-box">
+                <div class="column">
+                  <div class="image-frame">
+                    <img src="{% static './images/client_2.jpg' %}" alt="">
+                  </div>
+                </div>
+                <div class="column client-testimonial">
+                  <p class="text">"Nulla facilisi. Nulla a orci sapien. Ut nisi diam, suscipit vitae diam id, aliquam dignissim nulla. Quisque in lacinia eros. Aenean fermentum augue et dui mattis, id tempor tellus eleifend. Nulla eget suscipit urna."</p>
+                  <p class="signature">Stewart Butterfield</p>
+                  <p class="position-and-company">CTO & Founder @ <span>Yummy</span></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{% static './images/logo.png' %}" alt="">
+              <p>Panggon membantu anda menemukan ruang meeting sesuai kebutuhan dengan jaminan harga termurah</p>
+              <p>Copyright &copy; 2015-2017 Panggon</p>
+            </div>
+            <div class="col-md-2">
+              <p class="list-title">Links</p>
+              <ul>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Event Kita</a></li>
+                <li><a href="#">Layanan</a></li>
+                <li><a href="#">Syarat &amp; Ketentuan</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <p class="list-title">Contact us</p>
+              <p>Feel free to get in touch with as via phone or send us message</p>
+              <ul>
+                <li>
+                  <p class="contact-email"><i class="fa fa-phone" aria-hidden="true"></i> hello@panggon.com</p>
+                </li>
+                <li>
+                  <p><i class="fa fa-envelope" aria-hidden="true"></i> +6288 564 343 275</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <p class="list-title">sing up</p>
+              <p>Dapatkan keuntungan dengan bergabung bersama kami di panggon.com</p>
+              <button>Daftarkan Ruang</button>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript" src="{% static './javascript/zepto.min.js' %}"></script>
+    <script type="text/javascript" src="{% static './javascript/flatpickr.min.js' %}"></script>
+    <script type="text/javascript" src="{% static './javascript/responsive-navigation.js' %}"></script>
+<!--     <script>document.getElementsByClassName("date-picker")[0].flatpickr();</script>
+    <script>document.getElementsByClassName("date-picker2")[1].flatpickr();</script> -->
+
+{% endblock %}
